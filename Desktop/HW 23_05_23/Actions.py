@@ -48,7 +48,6 @@ class Actions:
 
             elements_to_test.append({key: found_element})
 
-
         for element in elements_to_test:
             key = list(element.keys())[0]
             print("[KEY]", key)
@@ -60,16 +59,23 @@ class Actions:
                 data_obj_key = list(data_obj.keys())[0]
                 data_obj_values = list(data_obj.values())[0]
 
-                if 
-                sleep(2)
+                print(data_obj_key)
+                print(data_obj_values)
 
-                found_element.click()
+                if data_obj_key ==key:
+                    sleep(2)
+
+                    found_element.click()
 
                 if data_obj_key =='Data':
                     self.type_date(data_obj_values)
-
                 else:
                     found_element.send_keys(data_obj_values)
+
+                if data_obj_key == "Person":
+                    plus_btn = self.find_element(
+                        By.XPATH, 'button[@class="fc63351294 a822bdf511 e3c025e003 fa565176a8 f7db01295e c334e6f658 e1b7cfea84 d64a4ea64d"]')
+#                print()_______
         sleep(1)
 
         print(elements_to_test)                
